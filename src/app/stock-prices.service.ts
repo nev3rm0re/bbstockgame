@@ -20,7 +20,8 @@ export class StockPricesService {
   }
 
   private loadDayZeroData(): void {
-    this.http.get('https://staging-api.brainbase.com/stocks.php').subscribe(
+    const headers = new Headers();
+    this.http.get('data/stocks.json').subscribe(
       (data: Array<StockJson>) => {
         this._stocks.next(this.convertJsonToData(data));
       },
