@@ -14,7 +14,10 @@ export class StockDayComponent implements OnInit {
   @Input()
   set day(value: number) {
     this._day = value;
-    this.currentDate = new Date().setDate(this.startDate.getDate() + this.day);
+    this.currentDate = new Date().setDate(
+      // subtracting 1, since current date should be day 1
+      this.startDate.getDate() + this.day - 1
+    );
   }
 
   get day(): number {

@@ -2,8 +2,9 @@
   <div class="col-sm-6 text-left">
     <p>
       {{ stock.symbol }}
+      <sub>{{ stock.initialPrice | currency: "USD" }}</sub>
       <br />
-      <small>{{ stock.name }}</small>
+      <small>{{ stock.name }}<br /> </small>
     </p>
   </div>
   <div class="col-sm-2"></div>
