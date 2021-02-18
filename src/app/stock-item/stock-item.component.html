@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-6 text-left">
+    <p>
+      {{ stock.symbol }}
+      <br />
+      <small>{{ stock.name }}</small>
+    </p>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4 text-right">
+    {{ stock.price | currency: "USD" }}
+    <br />
+    {{ stock.increase | currency: "USD" }},
+    {{ stock.increase / stock.initialPrice | percent }}
+    <i *ngIf="stock.increase > 0" class="fa fa-arrow-up text-success"></i>
+    <i *ngIf="stock.increase < 0" class="fa fa-arrow-down text-danger"></i>
+  </div>
+</div>

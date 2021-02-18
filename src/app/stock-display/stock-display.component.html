@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-9">
+    <app-stock-day [day]="day"></app-stock-day>
+  </div>
+  <div class="col-sm-3">
+    <button
+      *ngIf="!interval"
+      class="btn btn-primary btn-block"
+      (click)="onAdvance()"
+    >
+      Advance >>
+    </button>
+    <button
+      *ngIf="!!interval"
+      class="btn btn-block btn-danger"
+      (click)="onAdvance()"
+    >
+      Stop
+    </button>
+  </div>
+</div>
+<div *ngFor="let stock of stocks$ | async" class="row">
+  <app-stock-item [stock]="stock" class="col-sm-12"></app-stock-item>
+</div>
