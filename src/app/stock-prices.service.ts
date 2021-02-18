@@ -20,7 +20,7 @@ export class StockPricesService {
   }
 
   private loadDayZeroData(): void {
-    const headers = new Headers();
+    // Use local JSON for now to avoid CORS issues
     this.http.get('data/stocks.json').subscribe(
       (data: Array<StockJson>) => {
         this._stocks.next(this.convertJsonToData(data));
